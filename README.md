@@ -19,7 +19,7 @@ workshop organized as part of [WWWW 2026](https://wwww.robotframework.org) on We
 The first step is getting the initial material from this repository. The
 recommended approach is cloning the repository using `git`, but you can
 also [download the content as a zip file](
-https://github.com/pekkaklarck/robocon2026-extending-robot/archive/refs/heads/main.zip).
+https://github.com/pekkaklarck/wwww2026-extending-robot/archive/refs/heads/main.zip).
 
 During the day I push my changes to the `main` branch. If you cloned the repository,
 you can then easily pull the changes to your local repository  if needed.  If you
