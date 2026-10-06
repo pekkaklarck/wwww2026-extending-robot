@@ -2,4 +2,4 @@
 Example
     [Tags]    bad
     Log to konsole
-    ...    Hello, RoboCon 2026!
+    ...    Hello, WWWW 2026!
