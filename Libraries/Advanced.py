@@ -8,7 +8,8 @@ from robot.api.types import Secret
 
 
 class TurnDirection(Enum):
-    """Turn direction."""
+    """Available turn directions."""
+
     UP = "UP"
     DOWN = "DOWN"
     LEFT = "LEFT"
@@ -16,6 +17,7 @@ class TurnDirection(Enum):
 
 
 class EuroDate(date):
+    """Date that can be represented in `dd.mm.yyyy` format."""
 
     @classmethod
     def convert(cls, argument: str) -> Self:
@@ -26,23 +28,69 @@ class EuroDate(date):
             raise ValueError(f"Expected date in format 'dd.mm.yyyy', got '{argument}'.")
 
 
-@library(scope="SUITE", converters={EuroDate: EuroDate.convert})
+@library(scope="SUITE", converters={EuroDate: EuroDate.convert}, doc_format="MARKDOWN")
 class Advanced:
+    """Library demonstrating advanced features of the library API.
+
+    We can use **formatting**, [inline links](https://robotframework.org),
+    [reference links][robot], etc. Code examples are pretty cool:
+
+    ```python
+    def hello():
+        print("Hi!")
+    ```
+
+    ```robotframework
+    *** Test Cases ***
+    Example
+        Hello
+    ```
+
+    [robot]: https://robotframework.org
+    """
 
     def __init__(self, state: str = "not set"):
+        """Library state can be initialized when it is imported.
+
+        State can be also set with the [Set State] keyword and validated with
+        [State Should Be].
+
+        We can use references created in the introduction lke [Robot] also here!
+        """
         self.state = state
 
     @keyword
     def state_should_be(self, expected: str):
+        """Validates library state.
+
+        Args:
+            expected: Expected state.
+
+        Raises:
+            AssertionError: If state is not expected.
+        """
         if self.state != expected:
             raise AssertionError(
                 f"Expected state to be '{expected}' but it was '{self.state}'."
             )
 
     @keyword
-    def set_state(self, state: str):
+    def set_state(self, state: str) -> str:
+        """Sets library state.
+
+        Args:
+            state: New state.
+
+        Returns:
+            Previous state.
+
+        Tags:
+            state, example
+        """
         print(f"Changing state from '{self.state}' to '{state}'.")
+        previous = self.state
         self.state = state
+        return previous
 
     @keyword(name="Hello!")
     def hello(self):
