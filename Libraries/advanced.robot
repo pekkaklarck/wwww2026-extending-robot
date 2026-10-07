@@ -47,3 +47,9 @@ Continuable failures
     Fail softly    first
     Log    This is executed!
     Fail softly    second
+
+Fatal failures
+    Fail very hard
+
+Not executed due to fatal error
+    Log    This test is not run!

@@ -3,7 +3,7 @@ from enum import Enum
 from typing import Literal, Self
 
 from robot.api.deco import keyword, library
-from robot.api.exceptions import ContinuableFailure, SkipExecution
+from robot.api.exceptions import ContinuableFailure, FatalError, SkipExecution
 from robot.api.types import Secret
 
 
@@ -79,3 +79,7 @@ class Advanced:
     @keyword
     def fail_softly(self, message: str):
         raise ContinuableFailure(message)
+
+    @keyword
+    def fail_very_hard(self):
+        raise FatalError("Stopping the whole execution!")
