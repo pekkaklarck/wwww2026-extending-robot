@@ -38,3 +38,12 @@ Custom argument conversion
 
 Secrets
     Login    robot    ${PASSWORD}
+
+Skipping
+    Skip test
+    Fail    Not executed!
+
+Continuable failures
+    Fail softly    first
+    Log    This is executed!
+    Fail softly    second
