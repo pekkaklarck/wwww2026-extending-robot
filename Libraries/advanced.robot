@@ -24,12 +24,12 @@ Embedded arguments
 
 Restricting arguments with Literal
     Move    UP
-    Move    down
+    Move    left
     Move    bad
 
 Restricting arguments with Enum
     Turn    UP
-    Turn    down
+    Turn    left
     Turn    bad
 
 Custom argument conversion

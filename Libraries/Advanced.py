@@ -61,7 +61,7 @@ class Advanced:
 
     @keyword
     def turn(self, direction: TurnDirection):
-        print(f"Turning {direction}.")
+        print(f"Turning {direction.name}.")
 
     @keyword
     def workshop(self, start: EuroDate):
